@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
 import { ThirdwebProvider } from "@/app/thirdweb";
 import { client } from "../../utils/constants";
+
+import "bulma";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body class="has-text-white">
         <ThirdwebProvider client={client} >
-          {children}
+            {children}
         </ThirdwebProvider>
       </body>
     </html>

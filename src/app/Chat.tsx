@@ -25,13 +25,15 @@ const Chat: React.FC = () => {
     };
 
     return (
-        <div className="chatCard card">
-            <h3>Chat with Your Dragon</h3>
-            <div className="conversationHistory" style={{ height: '200px', overflowY: 'scroll', backgroundColor: '#f2f2f2', padding: '10px', marginBottom: '10px' }}>
+        <div className="box form">
+            <h3 className="title">Chat with Your Dragon</h3>
+            <div className="input m-2 p-6 textarea">
                 {conversation.map((msg, index) => (<div key={index}>{msg}</div>))}
             </div>
-            <input type="text" value={message} placeholder="Say something to your dragon..." style={{ width: '70%', marginRight: '10px' }} />
-            <button>Send</button>
+            <div className='columns p-4'>
+                <input type="text" defaultValue={message} placeholder="Say something to your dragon..." className="input" />
+                <button className='button primary'>Send</button>
+            </div>
         </div>
     );
 }
