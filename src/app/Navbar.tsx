@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar: React.FC = () => {
+const DracoriaNavbar: React.FC = () => {
     // Function to toggle visibility of cards by ID
     const toggleCard = (cardId: string) => {
         const card = document.getElementById(cardId);
@@ -8,16 +8,23 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="navbar">
-            <div className="navbar-items">
-                {/* Buttons to toggle different stats cards */}
-                <button>Dragon Stats</button>
-                <button>Garden Stats</button>
-                <button>Settings</button>
-                <button>Chat</button>
+        <nav color='primary'>
+            <div className='navbar-menu'>
+                <div className='navbar-item'>
+                    Dragon Stats
+                </div>
+                <div className='navbar-item'>
+                    Garden Stats
+                </div>
+                <div className='navbar-item'>
+                    Settings
+                </div>
+                <div className='navbar-item'>
+                    Chat
+                </div>
             </div>
         </nav>
     );
 };
 
-export default Navbar;
+export default DracoriaNavbar;

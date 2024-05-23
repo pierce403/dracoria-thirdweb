@@ -31,8 +31,8 @@ const Settings: React.FC = () => {
     };
 
     return (
-        <div className="settingsCard card hidden">
-            <h3>Settings</h3>
+        <div className="settingsCard card hidden p-4">
+            <h3 className="title">Settings</h3>
         </div>
     );
 };
