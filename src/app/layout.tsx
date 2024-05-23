@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body class="has-text-white">
+      <body>
         <ThirdwebProvider client={client} >
-            {children}
+          {children}
         </ThirdwebProvider>
       </body>
     </html>
