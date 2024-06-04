@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 // import "./globals.css";
 import { ThirdwebProvider } from "@/app/thirdweb";
-import { client } from "../../utils/constants";
+import { myClient } from "../../utils/constants";
 
 import "bulma";
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThirdwebProvider client={client} >
+        <ThirdwebProvider client={myClient} >
           {children}
         </ThirdwebProvider>
       </body>

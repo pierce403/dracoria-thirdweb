@@ -14,7 +14,7 @@
     "pino-pretty": "^11.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "thirdweb": "^5.0.0-beta-0c28573eec3111e724870f2832c1d3446a505e78-20240328000332"
+    "thirdweb": "^5.23.0"
   },
   "devDependencies": {
     "@types/node": "^20",
