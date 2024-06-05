@@ -2,7 +2,7 @@
 import { ConnectButton } from "@/app/thirdweb";
 
 // import styles from "./page.module.css";
-import { client, myChain } from "../../utils/constants";
+import { myClient, myChain } from "../../utils/constants";
 import DracoriaNavbar from "./Navbar";
 import Garden from "./Garden";
 import Settings from "./Settings";
@@ -14,7 +14,7 @@ export default function Home() {
   return (<div className="theme-dark">
     <DracoriaNavbar />
     <div style={{ textAlign: "center", marginTop: '20px' }}>
-      <ConnectButton client={myChain} />
+      <ConnectButton client={myClient} />
     </div>
     <div className="container p-4">
       <Dragon />
