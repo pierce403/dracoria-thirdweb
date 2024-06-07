@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 // import "./globals.css";
 import { ThirdwebProvider } from "@/app/thirdweb";
-import { myClient } from "../../utils/constants";
+import { client } from "./utils/client";
 
 import "bulma";
 
