@@ -23,6 +23,7 @@ const DracoriaNavbar: React.FC = () => {
                     Chat
                 </div>
             </div>
+
         </nav>
     );
 };
