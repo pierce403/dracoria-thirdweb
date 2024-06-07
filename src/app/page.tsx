@@ -3,11 +3,11 @@ import { ConnectButton } from "@/app/thirdweb";
 
 // import styles from "./page.module.css";
 import { client } from "./utils/client";
-import DracoriaNavbar from "./Navbar";
-import Garden from "./Garden";
-import Settings from "./Settings";
-import Chat from "./Chat";
-import Dragon from "./Dragon";
+import DracoriaNavbar from "./components/Navbar";
+import Garden from "./components/Garden";
+import Settings from "./components/Settings";
+import Chat from "./components/Chat";
+import Dragon from "./components/Dragon";
 import { LoginButton } from "./components/LoginButton";
 
 
