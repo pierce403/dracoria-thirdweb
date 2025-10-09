@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "bulma": "^1.0.0",
-    "next": "14.2.3",
+    "next": "14.2.32",
     "pino-pretty": "^11.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "thirdweb": "^5.23.0"
+    "thirdweb": "^5.108.10"
   },
   "devDependencies": {
     "@types/node": "^20",
