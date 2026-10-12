@@ -83,5 +83,12 @@ no unsigned wallet authentication or dummy production key was introduced.
 
 Known deferred issues: wallet sign-in/session issuance, placeholder Dragon/Garden
 data, unimplemented settings/chat handlers and API endpoints. Public layout and
-assets remain. Production uses native main builds and exact apex/www ordinary
-Worker routes; original DNS destinations and Vercel deployments remain recovery.
+assets remain. Production uses native main builds and the exact apex ordinary
+Worker route; original DNS destinations and Vercel deployments remain recovery.
+
+The deferred-auth candidate5ec4511 passes eight actual Node auth tests, lint
+(four preserved placeholder warnings), typecheck, Worker compilation and dry run.
+Initial native build491c7903-7f25-495e-99d6-ca0b96929afe published version
+2d58a108-a2db-4cea-b61a-d7c79917622a at100%. Worker-host browser renders the
+unavailable notice and original cards; public routes/assets/real404 and exact
+no-store marker are verified before attaching the apex route.

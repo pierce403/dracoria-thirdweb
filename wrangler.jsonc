@@ -12,6 +12,9 @@
     "binding": "ASSETS"
   },
   "workers_dev": true,
+  "routes": [
+    { "pattern": "dracoria.org/*", "zone_name": "dracoria.org" }
+  ],
   "observability": {
     "enabled": true,
     "traces": {
