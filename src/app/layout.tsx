@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 // import "./globals.css";
 import { ThirdwebProvider } from "@/app/thirdweb";
-import { client } from "./utils/client";
 
-import "bulma";
+import "bulma/css/bulma.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

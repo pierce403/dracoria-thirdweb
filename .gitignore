@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.vinext/
+.wrangler/
+
+.agents/
+skills-lock.json
+.migration/
+.dev.vars*
+.env*

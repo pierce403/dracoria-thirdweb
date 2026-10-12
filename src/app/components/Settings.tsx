@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Settings: React.FC = () => {
     //const [email, setEmail] = useState('');
@@ -8,9 +8,9 @@ const Settings: React.FC = () => {
     // Function to handle settings form submission
     const updateSettings = async () => {
 
-        let email = '';
-        let password = '';
-        let notifications = false;
+        const email = '';
+        const password = '';
+        const notifications = false;
 
         try {
             const response = await fetch('/api/updateSettings', {

@@ -1,39 +1,26 @@
 'use server';
 
-import { VerifyLoginPayloadParams } from "thirdweb/auth";
-import { thirdwebAuth } from "../utils/thirdwebAuth";
+import type { VerifyLoginPayloadParams } from "thirdweb/auth";
 import { cookies } from "next/headers";
+import { getThirdwebAuth } from "../utils/thirdwebAuth";
+import { createSessionHandlers } from "../utils/auth-session";
 
-export const generatePayload = thirdwebAuth.generatePayload;
-
-export async function login(
-    payload: VerifyLoginPayloadParams
-) {
-    const verfifiedPayload = await thirdwebAuth.verifyPayload(payload);
-
-    if (verfifiedPayload.valid) {
-        const jwt = await thirdwebAuth.generateJWT({
-            payload: verfifiedPayload.payload,
-        });
-        cookies().set("jwt", jwt);
-    }
+async function session() {
+  return createSessionHandlers(getThirdwebAuth(), await cookies());
 }
 
-export async function isLoggedIn() {
-    const jwt = cookies().get("jwt");
-    if (!jwt?.value) {
-        return false;
-    }
+export async function generatePayload(params: { address: string; chainId?: number }) {
+  return (await session()).generatePayload(params);
+}
 
-    const authResult = await thirdwebAuth.verifyJWT({ jwt: jwt.value });
+export async function login(payload: VerifyLoginPayloadParams) {
+  return (await session()).login(payload);
+}
 
-    if (!authResult.valid) {
-        return false;
-    }
-
-    return true;
+export async function isLoggedIn(address: string) {
+  return (await session()).isLoggedIn(address);
 }
 
 export async function logout() {
-    cookies().delete("jwt");
+  return (await session()).logout();
 }

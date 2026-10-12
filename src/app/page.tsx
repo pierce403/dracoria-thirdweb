@@ -1,8 +1,6 @@
 'use client'
-import { ConnectButton } from "@/app/thirdweb";
 
 // import styles from "./page.module.css";
-import { client } from "./utils/client";
 import DracoriaNavbar from "./components/Navbar";
 import Garden from "./components/Garden";
 import Settings from "./components/Settings";

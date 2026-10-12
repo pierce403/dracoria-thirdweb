@@ -8,7 +8,7 @@ export const LoginButton = () => {
         client={client}
         auth={{
             isLoggedIn: async (address) => {
-                return await isLoggedIn();
+                return await isLoggedIn(address);
             },
             doLogin: async (params) => {
                 await login(params);
