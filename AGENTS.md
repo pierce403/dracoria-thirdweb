@@ -11,6 +11,10 @@
   secrets or full Thirdweb clients. Only NEXT_PUBLIC_THIRDWEB_CLIENT_ID is public.
 - Production auth requires an explicitly approved server-only signer and exact
   THIRDWEB_DOMAIN. Never substitute an API key for an Ethereum signing key.
+- The owner authorized hosting cutover on 2026-10-12 with existing broken wallet
+  login explicitly deferred. Keep its unavailable notice and disabled login
+  control until auth is repaired and verified; do not create a replacement signer
+  or treat connected-wallet state as a server-authenticated session.
 - Keep existing Dragon/Garden/settings/chat scope. Unimplemented controls or
   endpoints are not permission to invent features during a hosting migration.
 - Record migration facts, tests and unresolved release gates in NOTES.md. Keep

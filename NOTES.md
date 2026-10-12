@@ -69,3 +69,19 @@ localhost domain and the public client ID; it must never be copied to production
 Final clean npm ci from the candidate lock succeeded under Node 22.23.3. After it,
 the Cloudflare build, all eight auth tests, typecheck, lint and Wrangler dry run
 passed again. No production push or deployment has been performed by this port.
+
+
+## 2026-10-12 owner-approved cutover with deferred auth
+
+The owner explicitly chose to migrate the public app now and repair its already
+broken wallet login later. Live Vercel login-status returned500; all fetched history
+contains no SESSION_SECRET session implementation, and the expected admin signer
+remains unconfigured. This supersedes the hosting hold, not permission to create
+a replacement signer. Login now visibly reports unavailable and its control is
+disabled. Original signed-auth implementation/tests remain for a later repair;
+no unsigned wallet authentication or dummy production key was introduced.
+
+Known deferred issues: wallet sign-in/session issuance, placeholder Dragon/Garden
+data, unimplemented settings/chat handlers and API endpoints. Public layout and
+assets remain. Production uses native main builds and exact apex/www ordinary
+Worker routes; original DNS destinations and Vercel deployments remain recovery.
