@@ -92,3 +92,27 @@ Initial native build491c7903-7f25-495e-99d6-ca0b96929afe published version
 2d58a108-a2db-4cea-b61a-d7c79917622a at100%. Worker-host browser renders the
 unavailable notice and original cards; public routes/assets/real404 and exact
 no-store marker are verified before attaching the apex route.
+
+## 2026-10-13 dependency remediation candidate
+
+The separate `codex/dependency-alerts` review branch resolves locked ws 8.x to
+8.21.0, js-yaml to 4.3.2, fflate to 0.7.5 and uuid to 11.1.1. npm overrides
+are needed for exact transitive pins. The one ws 7.x installation belongs to
+`@walletconnect/jsonrpc-ws-connection` and is outside the affected ws 8.x
+range. No application source or deployment configuration changed.
+
+Validation: clean offline `npm ci --legacy-peer-deps` under Node 22.22.1,
+Node auth tests, typecheck, lint (four existing warnings), Cloudflare build
+with a nonproduction public client ID, and Wrangler dry run. The local source
+snapshot omits some binary public assets, so this does not establish full
+asset parity with the remote repository.
+
+Open upstream blockers: braces 3.0.3 has no patched version. It is retained
+through build tooling (`@next/eslint-plugin-next` and vinext fast-glob) and
+must not be represented as fixed. decode-uri-component 0.2.2 is retained
+through query-string 7.1.3 in WalletConnect. Its patched 0.5.0 release is
+ESM-only, while this query-string version requires a CommonJS function;
+the patched npm tarball is also absent from the available offline registry
+cache. Replacing that chain needs a compatible upstream release and runtime
+testing. Neither alert was dismissed. Production publication remains with
+the native Git coordination workflow.

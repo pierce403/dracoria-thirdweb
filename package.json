@@ -48,5 +48,13 @@
   "type": "module",
   "engines": {
     "node": "22.x"
+  },
+  "overrides": {
+    "ws": "8.21.0",
+    "@walletconnect/jsonrpc-ws-connection": {
+      "ws": "7.5.13"
+    },
+    "fflate": "0.7.5",
+    "uuid": "11.1.1"
   }
 }
